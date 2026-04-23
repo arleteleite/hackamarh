@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HACKAMARH 2026 | Maratona de Inovação</title>
+    <link
+      rel="icon"
+      href="https://via.placeholder.com/32/00ff88/0b0f0c?text=H"
+      type="image/png"
+    />
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome para Ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Library (Animações ao Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Container para as Partículas de Fundo (IA/Rede) -->
+    <div id="tsparticles"></div>
+
+    <!-- CABEÇALHO -->
+    <header class="header" id="header">
+      <div class="header__container">
+        <!-- Logo à esquerda -->
+        <a href="#hero" class="header__logo-link">
+          <!-- Se tiver a logo em imagem, troque o span pela tag <img> -->
+          <span class="header__logo-text"
+            >HACKA<span class="text-neon">MARH</span></span
+          >
+        </a>
+
+        <!-- Menu ao centro -->
+        <nav class="nav" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#sobre" class="nav__link">O Evento</a>
+            </li>
+            <li class="nav__item">
+              <a href="#regras" class="nav__link">Regras</a>
+            </li>
+            <li class="nav__item">
+              <a href="#desafios" class="nav__link">Desafios</a>
+            </li>
+            <li class="nav__item">
+              <a href="#videos" class="nav__link">Vídeos</a>
+            </li>
+            <li class="nav__item">
+              <a href="#premiacao" class="nav__link">Premiação</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Botão à direita (Desktop) e Hambúrguer (Mobile) -->
+        <div class="header__actions">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfzoaxztq3V9wMM575zS2fjt7SglZ9HOFFs_gyHGCuhg8EYyQ/viewform"
+            target="_blank"
+            class="btn btn--neon header__btn-cta"
+            >INSCREVA-SE</a
+          >
+          <button
+            class="header__menu-btn"
+            id="btn-mobile"
+            aria-label="Abrir Menu"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- SEÇÃO HERO -->
+      <section class="hero" id="hero">
+        <div class="hero__overlay"></div>
+
+        <div
+          class="hero__container"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <!-- CONTEÚDO PRINCIPAL (Textos e botões mantidos à esquerda) -->
+          <div class="hero__content">
+            <div class="hero__badge">1ª EDIÇÃO</div>
+            <h1 class="hero__title">
+              HACKA<span class="text-neon">MARH</span><br />
+              <span class="hero__title-year">2026</span>
+            </h1>
+            <p class="hero__subtitle">
+              Maratona de Inovação para o Agro Sustentável, Clima e Gestão
+              Territorial.
+            </p>
+
+            <div class="hero__info">
+              <div class="hero__info-item">
+                <i class="fa-regular fa-calendar text-neon"></i> 29 A 31 DE MAIO
+                DE 2026
+              </div>
+              <div class="hero__info-item">
+                <i class="fa-solid fa-location-dot text-neon"></i> PALMAS - TO
+              </div>
+            </div>
+
+            <div class="hero__actions">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfzoaxztq3V9wMM575zS2fjt7SglZ9HOFFs_gyHGCuhg8EYyQ/viewform"
+                target="_blank"
+                class="btn btn--neon btn--large hero__btn"
+                >INSCREVA-SE AGORA <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- CONTADOR REGRESSIVO (Nova sub-seção centralizada) -->
+          <div class="hero__countdown-wrapper">
+            <div class="countdown glass-panel" id="countdown">
+              <h3 class="countdown__title">A MARATONA COMEÇA EM:</h3>
+              <div class="countdown__timer">
+                <div class="countdown__item">
+                  <span id="days" class="countdown__number text-neon">00</span>
+                  <p class="countdown__label">DIAS</p>
+                </div>
+                <div class="countdown__item">
+                  <span id="hours" class="countdown__number text-neon">00</span>
+                  <p class="countdown__label">HORAS</p>
+                </div>
+                <div class="countdown__item">
+                  <span id="minutes" class="countdown__number text-neon"
+                    >00</span
+                  >
+                  <p class="countdown__label">MINUTOS</p>
+                </div>
+                <div class="countdown__item">
+                  <span id="seconds" class="countdown__number text-neon"
+                    >00</span
+                  >
+                  <p class="countdown__label">SEGUNDOS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO SOBRE -->
+      <section class="section sobre" id="sobre" data-aos="fade-up">
+        <div class="section__container text-center glass-panel">
+          <h2 class="section__title">
+            Por que <span class="text-neon">Participar?</span>
+          </h2>
+          <p class="section__text">
+            O HACKAMARH é mais que uma maratona de código. É o ecossistema ideal
+            para GovTechs e AgTechs inovarem na gestão e regularização
+            ambiental. Venha criar soluções que gerem impacto real para os
+            ativos naturais do Estado, faça networking de alto nível e concorra
+            a prêmios incríveis.
+          </p>
+        </div>
+      </section>
+
+      <!-- SEÇÃO REGRAS -->
+      <section class="section regras" id="regras">
+        <div class="section__container">
+          <div class="section__header" data-aos="fade-right">
+            <p class="section__kicker">REGRAS DO EVENTO</p>
+            <h2 class="section__title text-left">
+              O que você <br /><span class="text-neon"
+                >precisa saber <i class="fa-solid fa-leaf"></i
+              ></span>
+            </h2>
+          </div>
+
+          <div class="grid-cards" data-aos="fade-up" data-aos-delay="200">
+            <div class="card glass-panel">
+              <div class="card__icon-wrapper">
+                <i class="fa-solid fa-users card__icon"></i>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">Vagas e Equipes</h3>
+                <p class="card__text">
+                  Até 50 vagas, divididas em equipes de 3 a 5 integrantes.
+                </p>
+              </div>
+            </div>
+            <div class="card glass-panel">
+              <div class="card__icon-wrapper">
+                <i class="fa-solid fa-venus card__icon"></i>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">Diversidade</h3>
+                <p class="card__text">
+                  É obrigatório ter pelo menos 1 participante feminino por
+                  equipe.
+                </p>
+              </div>
+            </div>
+            <div class="card glass-panel">
+              <div class="card__icon-wrapper">
+                <i class="fa-solid fa-laptop-code card__icon"></i>
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">Desenvolvimento</h3>
+                <p class="card__text">
+                  Maratona de 48h. O núcleo do MVP deve ser criado no evento.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO DESAFIOS -->
+      <section class="section desafios" id="desafios">
+        <div class="section__container">
+          <div class="section__header" data-aos="fade-up">
+            <p class="section__kicker">DESAFIOS DO HACKAMARH</p>
+            <h2 class="section__title text-left">
+              Dois eixos. Grandes <span class="text-neon">desafios.</span>
+            </h2>
+          </div>
+
+          <div class="grid-desafios">
+            <div class="desafio-card glass-panel" data-aos="fade-right">
+              <div
+                class="desafio-card__bg"
+                style="
+                  background-image: url(&quot;https://picsum.photos/600/400?nature&quot;);
+                "
+              ></div>
+              <div class="desafio-card__content">
+                <span class="desafio-card__badge">EIXO 01</span>
+                <h3 class="desafio-card__title">
+                  Acesso ao Financiamento e Gestão de Impacto (JREDD+)
+                </h3>
+                <p class="desafio-card__text">
+                  Democratizar o acesso aos fundos de carbono e garantir
+                  transparência na execução de projetos ambientais com fluxos
+                  simples de monitoramento.
+                </p>
+              </div>
+            </div>
+            <div class="desafio-card glass-panel" data-aos="fade-left">
+              <div
+                class="desafio-card__bg"
+                style="
+                  background-image: url(&quot;https://picsum.photos/600/400?drone&quot;);
+                "
+              ></div>
+              <div class="desafio-card__content">
+                <span class="desafio-card__badge">EIXO 02</span>
+                <h3 class="desafio-card__title">
+                  Restauração Ecológica e Monitoramento de Áreas
+                </h3>
+                <p class="desafio-card__text">
+                  Melhorar o acompanhamento e a efetividade das áreas em
+                  recuperação ambiental no Estado, utilizando evidências e
+                  alertas visuais de risco.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO VÍDEOS -->
+      <section class="section videos" id="videos">
+        <div class="section__container">
+          <div class="section__header text-center" data-aos="fade-up">
+            <p class="section__kicker">PÍLULAS DE CONHECIMENTO</p>
+            <h2 class="section__title">
+              Entenda as <span class="text-neon">dores reais</span> que queremos
+              resolver.
+            </h2>
+            <p class="section__subtitle">
+              Assista e aprofunde-se nos problemas dos nossos eixos
+              estratégicos.
+            </p>
+          </div>
+
+          <div class="grid-videos" data-aos="fade-up" data-aos-delay="200">
+            <div class="video-card glass-panel">
+              <div class="video-card__iframe-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                  title="Pílula Eixo 1"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="video-card__content">
+                <h3 class="video-card__title">A dor do Eixo 01: JREDD+</h3>
+                <p class="video-card__description">
+                  Por que é tão difícil democratizar o acesso aos fundos de
+                  carbono hoje?
+                </p>
+              </div>
+            </div>
+            <div class="video-card glass-panel">
+              <div class="video-card__iframe-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                  title="Pílula Eixo 2"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="video-card__content">
+                <h3 class="video-card__title">
+                  A dor do Eixo 02: Restauração Ecológica
+                </h3>
+                <p class="video-card__description">
+                  Quais são os maiores desafios para acompanhar o sucesso de
+                  áreas em recuperação?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO PREMIAÇÃO -->
+      <section class="section premiacao" id="premiacao">
+        <div class="section__container">
+          <div class="section__header text-center" data-aos="fade-up">
+            <p class="section__kicker">PREMIAÇÃO</p>
+            <h2 class="section__title">
+              As 5 melhores equipes serão
+              <span class="text-neon">premiadas!</span>
+            </h2>
+          </div>
+
+          <div class="podio" data-aos="zoom-in" data-aos-delay="200">
+            <!-- 4º LUGAR -->
+            <div class="podio__item podio__item--quarto">
+              <p class="podio__posicao">4º LUGAR</p>
+              <p class="podio__valor">R$ 3.000</p>
+              <div class="podio__base glass-panel">4</div>
+            </div>
+            <!-- 2º LUGAR -->
+            <div class="podio__item podio__item--prata">
+              <p class="podio__posicao">2º LUGAR</p>
+              <p class="podio__valor">R$ 8.000</p>
+              <div class="podio__base glass-panel">2</div>
+            </div>
+            <!-- 1º LUGAR -->
+            <div class="podio__item podio__item--ouro">
+              <p class="podio__posicao text-neon">1º LUGAR</p>
+              <p class="podio__valor text-neon">R$ 12.000</p>
+              <div class="podio__base glass-panel">
+                1<i class="fa-solid fa-trophy podium-trophy"></i>
+              </div>
+            </div>
+            <!-- 3º LUGAR -->
+            <div class="podio__item podio__item--bronze">
+              <p class="podio__posicao">3º LUGAR</p>
+              <p class="podio__valor">R$ 5.000</p>
+              <div class="podio__base glass-panel">3</div>
+            </div>
+            <!-- 5º LUGAR -->
+            <div class="podio__item podio__item--quinto">
+              <p class="podio__posicao">5º LUGAR</p>
+              <p class="podio__valor">R$ 2.000</p>
+              <div class="podio__base glass-panel">5</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO CRONOGRAMA -->
+      <section class="section cronograma" id="cronograma">
+        <div class="section__container">
+          <div class="section__header text-center" data-aos="fade-up">
+            <p class="section__kicker">CRONOGRAMA OFICIAL</p>
+            <h2 class="section__title">
+              Datas <span class="text-neon">Importantes</span>
+            </h2>
+          </div>
+
+          <div class="timeline" data-aos="fade-up" data-aos-delay="200">
+            <div class="timeline__item">
+              <div class="timeline__date">30/04/2026</div>
+              <div class="timeline__content glass-panel">
+                Publicação do Edital Conjunto
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__date">01 a 21/05/2026</div>
+              <div class="timeline__content glass-panel">
+                Período de Inscrições Online
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__date">25/05/2026</div>
+              <div class="timeline__content glass-panel">
+                Homologação Oficial das Equipes
+              </div>
+            </div>
+            <div class="timeline__item timeline__item--highlight">
+              <div class="timeline__date text-neon">29 a 31/05/2026</div>
+              <div class="timeline__content glass-panel border-neon">
+                Maratona HACKAMARH (Presencial)
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__date">A Definir</div>
+              <div class="timeline__content glass-panel">
+                Cerimônia de Premiação (Oscar do ICMS Ecológico)
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="section cta-final" data-aos="fade-up">
+        <div class="section__container glass-panel cta-final__container">
+          <div class="cta-final__text">
+            <h2 class="section__title text-left">
+              Pronto para <span class="text-neon">inovar</span><br />
+              e gerar <span class="text-neon">impacto?</span>
+            </h2>
+            <p>
+              As inscrições são gratuitas e realizadas de forma individual.
+              Defina seu perfil (Tecnologia, Design ou Negócios) e venha
+              transformar ideias em soluções reais.
+            </p>
+          </div>
+          <div class="cta-final__action">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfzoaxztq3V9wMM575zS2fjt7SglZ9HOFFs_gyHGCuhg8EYyQ/viewform"
+              target="_blank"
+              class="btn btn--neon btn--large"
+              >INSCREVA-SE AGORA <i class="fa-solid fa-arrow-right"></i
+            ></a>
+            <p class="cta-final__vagas">
+              VAGAS LIMITADAS PARA 50 PARTICIPANTES!
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer glass-panel">
+      <div class="footer__container">
+        <div class="footer__brand">
+          <span class="header__logo-text"
+            >HACKA<span class="text-neon">MARH</span></span
+          >
+        </div>
+        <div class="footer__partners">
+          <p>REALIZAÇÃO E PARCEIROS</p>
+          <div class="footer__logos">
+            <span>SEMARH</span> • <span>UNITINS</span> • <span>FAPTO</span> •
+            <span>ATI</span>
+          </div>
+        </div>
+        <div class="footer__social">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 HACKAMARH — Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Bibliotecas JS -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Script Principal -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
